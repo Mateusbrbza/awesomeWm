@@ -18,10 +18,11 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wallpaper.png"
 theme.font                                      = "JetBrainsMono Nerd Font 14"
 theme.taglist_font                              = "JetBrainsMono Nerd Font 12"
+
 -- Catppuccin Mocha colors
-theme.fg_normal                                 = "#cdd6f4"  -- text
-theme.primarycolor                              = "#89b4fa"  -- blue
-theme.secondarycolor                            = "#74c7ec"  -- sapphire
+theme.fg_normal                                 = "#89b4fa"  -- text
+theme.primarycolor                              = "#1e1e2e"  -- surface1 (darker for better contrast)
+theme.secondarycolor                            = "#313244"  -- surface2 (darker for better contrast)
 theme.fg_focus                                  = "#1e1e2e"  -- base (dark text on colored bg)
 theme.fg_urgent                                 = "#f38ba8"  -- red
 theme.bg_normal                                 = "#1e1e2e"  -- base
@@ -118,7 +119,7 @@ local clock = awful.widget.watch(
 theme.cal = lain.widget.cal({
     attach_to = { clock },
     notification_preset = {
-        font = "JetBrains Mono 12",
+        font = "JetBrainsMono Nerd Font Bold 12",
         fg   = theme.fg_normal,
         bg   = theme.bg_normal
     }
