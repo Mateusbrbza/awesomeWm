@@ -7,14 +7,15 @@ settings.themes = {
     "PowerArrow_Genesis", -- 2
     "PowerArrow_Matcha", -- 3
     "PowerArrow_RGB", -- 4
-    "PowerArrow_CalmRed" -- 5
+    "PowerArrow_CalmRed", -- 5
+    "PowerArrow_Catppuccin" -- 6
 }
 
 settings.chosen_theme = settings.themes[3] -- replace number inside of [] with a theme number from the list above
 
 settings.enableTitlebar = false -- Set to true if you wish to have title bars on top of applications (i.e to have buttons: close, minimise, etc )
 
-settings.gapsize = 6 -- set your gap size here
+settings.gapsize = 5 -- set your gap size here
 
 settings.focusOnHover = false -- set to false if you don't want the window to focused on mouse hover
 
@@ -34,9 +35,6 @@ settings.useLxPolkit = true -- If you would like to use a polkit (without one yo
 
 -- Required Package: flameshot
 settings.useFlameShot = true -- If you want flameshot (screenshotting tool) to auto start
-
-
-
 
 ---------- Get your local weather ID from https://openweathermap.org/ ----------
 

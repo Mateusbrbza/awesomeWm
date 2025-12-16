@@ -53,8 +53,8 @@ local altkey  = "Mod1"
 local modkey1 = "Control"
 
 -- personal variables
-local terminal   = "alacritty -e tmux"
-local editor     = os.getenv("EDITOR") or "nano"
+local terminal   = "alacritty"
+local editor     = os.getenv("EDITOR") or "nvim"
 local editor_tui = terminal .. " -e " .. editor
 local volume_down_key  = "XF86AudioLowerVolume"
 local volume_up_key    = "XF86AudioRaiseVolume"
@@ -207,7 +207,7 @@ globalkeys = my_table.join(
         {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
         {description = "focus the previous screen", group = "screen"}),
-        
+
     -- Jump to urgent client
     awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
         { description = "jump to urgent client", group = "client" }),
@@ -226,7 +226,7 @@ globalkeys = my_table.join(
     -- Standard program
     awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
         {description = "open a terminal", group = "launcher"}),
-              
+
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         {description = "reload awesome", group = "awesome"}),
 
@@ -238,7 +238,7 @@ globalkeys = my_table.join(
 
     awful.key({ modkey, }, "h", function() awful.tag.incmwfact(-0.05) end,
         {description = "decrease master width factor", group = "layout"}),
-              
+
     awful.key({ modkey, "Shift" }, "h", function() awful.tag.incnmaster(1, nil, true) end,
         {description = "increase the number of master clients", group = "layout"}),
 
@@ -268,7 +268,7 @@ globalkeys = my_table.join(
         end,
         { description = "restore minimized", group = "client" }),
 
-    -- Firefox 
+    -- Firefox
     awful.key({ modkey }, "space", function() awful.util.spawn("firefox") end,
         {description = "Open a Firefox", group = "Personal launchers"}),
 
@@ -293,7 +293,7 @@ globalkeys = my_table.join(
     -- $ chmod +x filename.sh
     awful.key({ modkey }, "BackSpace", function() awful.util.spawn("/home/mateusbrbza/.config/rofi/powermenu/type-1/powermenu.sh") end,
         {description = "run rofi drun", group = "Personal launchers"}),
-    
+
     -- Ranger
     awful.key({ modkey }, "f", function() awful.util.spawn("gnome-terminal -e ranger") end,
         {description = "Open Ranger", group = "Personal launchers"}),
@@ -350,7 +350,7 @@ globalkeys = my_table.join(
             volume.update()
         end,
         {description = "volume 0%", group = "hotkeys"}),
-    
+
     -- playerctl audio prev/next/play-pause (used currently with Spotify)
     awful.key({ modkey, altkey }, "Left",
         function ()
