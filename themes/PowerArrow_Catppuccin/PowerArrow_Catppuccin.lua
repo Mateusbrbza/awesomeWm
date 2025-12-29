@@ -166,6 +166,7 @@ local cpu = lain.widget.cpu({
     end
 })
 
+-- Doesnt Work
 -- Coretemp (lain, average)
 local temp = lain.widget.temp({
     settings = function()
@@ -189,6 +190,7 @@ theme.weather = lain.widget.weather({
     end
 })
 
+-- Not being used
 -- Battery
 local baticon = wibox.widget.imagebox(theme.widget_battery)
 local bat = lain.widget.bat({

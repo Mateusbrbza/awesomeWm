@@ -191,7 +191,7 @@ globalkeys = my_table.join(
     ),
 
     -- Show Menu
-    awful.key({ modkey, }, "w", function() awful.util.mymainmenu:show() end,
+    awful.key({ modkey, }, "BackSpace", function() awful.util.mymainmenu:show() end,
         { description = "show main menu", group = "awesome" }),
 
     -- Layout manipulation
@@ -251,9 +251,6 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Control" }, "l", function() awful.tag.incncol(-1, nil, true) end,
         {description = "decrease the number of columns", group = "layout"}),
 
-    awful.key({ modkey }, "space", function() awful.layout.inc( 1) end,
-        {description = "select next", group = "layout"}),
-
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
         {description = "select previous", group = "layout"}),
 
@@ -269,12 +266,12 @@ globalkeys = my_table.join(
         { description = "restore minimized", group = "client" }),
 
     -- Firefox
-    awful.key({ modkey }, "space", function() awful.util.spawn("firefox") end,
+    awful.key({ modkey, "Control" }, "space", function() awful.util.spawn("firefox") end,
         {description = "Open a Firefox", group = "Personal launchers"}),
 
     -- Rofi
     -- DRun Rofi Program
-    awful.key({ modkey }, "p", function() awful.util.spawn("rofi -show drun") end,
+    awful.key({ modkey }, "space", function() awful.util.spawn("rofi -show drun") end,
         {description = "rofi -show drun", group = "Personal launchers"}),
 
     -- Rofi Filebrowser
@@ -288,11 +285,6 @@ globalkeys = my_table.join(
     -- Rofi run prompt
     awful.key({ modkey }, "r", function() awful.util.spawn("rofi -show run") end,
         {description = "rofi -show run", group = "Personal launchers"}),
-
-    -- Rofi Powermenu
-    -- $ chmod +x filename.sh
-    awful.key({ modkey }, "BackSpace", function() awful.util.spawn("/home/mateusbrbza/.config/rofi/powermenu/type-1/powermenu.sh") end,
-        {description = "run rofi drun", group = "Personal launchers"}),
 
     -- Ranger
     awful.key({ modkey }, "f", function() awful.util.spawn("gnome-terminal -e ranger") end,
