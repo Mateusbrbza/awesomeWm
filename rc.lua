@@ -62,7 +62,7 @@ local volume_up_key    = "XF86AudioRaiseVolume"
 -- awesome variables
 awful.util.terminal = terminal
 awful.layout.suit.tile.left.mirror = true
-awful.util.tagnames = { "1", "2", "3", "4", "5", "6" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -115,7 +115,6 @@ beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/theme
 
 local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
-    { "manual", terminal .. " -e 'man awesome'" },
     { "edit config", editor_tui .. " " .. awesome.conffile },
     { "restart", awesome.restart },
 }
@@ -133,7 +132,6 @@ awful.util.mymainmenu = freedesktop.menu.build({
         { "Sleep", "systemctl suspend" },
         { "Restart", "systemctl reboot" },
         { "Shutdown", "systemctl poweroff" },
-        -- other triads can be put here
     }
 })
 
@@ -602,7 +600,6 @@ then
 end
 
 -- Policy kit is an essential tool for managing privileges and permission,
--- we are using lxpolkit for this matter, if you wish to use a different polkit install and change the directory here
 if (settings.useLxPolkit == true)
 then
     awful.spawn.with_shell("/usr/bin/lxpolkit")

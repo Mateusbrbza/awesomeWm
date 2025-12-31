@@ -16,8 +16,8 @@ local my_table = awful.util.table or gears.table
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/" .. settings.chosen_theme
 theme.wallpaper                                 = theme.dir .. "/wallpaper.png"
-theme.font                                      = "JetBrainsMono Nerd Font 14"
-theme.taglist_font                              = "JetBrainsMono Nerd Font 12"
+theme.font                                      = "JetBrainsMono Nerd Font 16"
+theme.taglist_font                              = "JetBrainsMono Nerd Font 14"
 
 -- Catppuccin Mocha colors
 theme.fg_normal                                 = "#89b4fa"  -- text

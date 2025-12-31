@@ -33,10 +33,7 @@ Esta configuração do AwesomeWM utiliza o tema PowerArrow como base, com suport
 
 A configuração suporta os seguintes temas (definidos em `settings.lua`):
 
-1. **PowerArrow_Neon**
-2. **PowerArrow_Genesis**
 3. **PowerArrow_Matcha** - Tema verde com inspiração Matcha
-4. **PowerArrow_RGB**
 5. **PowerArrow_CalmRed** - Tema vermelho suave
 6. **PowerArrow_Catppuccin** - Tema baseado no Catppuccin Mocha (atual)
 

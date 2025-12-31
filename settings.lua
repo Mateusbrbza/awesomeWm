@@ -1,6 +1,5 @@
 local settings = {}
 
-
 ---------- Theme ----------
 settings.themes = {
     "PowerArrow_Matcha", -- 1
@@ -17,24 +16,22 @@ settings.gapsize = 5 -- set your gap size here
 settings.focusOnHover = false -- set to false if you don't want the window to focused on mouse hover
 
 ---------- Startup Programs ----------
-
 -- Required package: nitrogen
-settings.useNitrogen = true -- Set this to true for nitrogen to do your wallpaper (if you want to use the theme's default wallpaper set this to false)
+settings.useNitrogen = true
 
 -- Required Package: picom
-settings.usePicom = true -- Set this to true if you want picom to launch on startup
+settings.usePicom = true
 
 -- Requires network manager
-settings.useNMApplet = true -- If you have network manager installed, you can use manage your network (i.e connect to wifi) from the system tray icon
+settings.useNMApplet = true
 
 -- Required Package: lxpolkit
-settings.useLxPolkit = true -- If you would like to use a polkit (without one you can't easily install applications from the store or make changes to partitions for example), you can set this to true
+settings.useLxPolkit = true
 
 -- Required Package: flameshot
-settings.useFlameShot = true -- If you want flameshot (screenshotting tool) to auto start
+settings.useFlameShot = true
 
 ---------- Get your local weather ID from https://openweathermap.org/ ----------
-
 settings.weatherID = 3463237 -- Set this to your own weather ID
 
 return settings
