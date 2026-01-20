@@ -609,3 +609,8 @@ if (settings.useFlameShot == true)
 then
     awful.spawn.with_shell("flameshot")
 end
+
+if (settings.useBlueman == true)
+then
+    awful.spawn.with_shell("blueman-applet")
+end

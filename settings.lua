@@ -31,6 +31,9 @@ settings.useLxPolkit = true
 -- Required Package: flameshot
 settings.useFlameShot = true
 
+-- Required Package: blueman
+settings.useBlueman = true
+
 ---------- Get your local weather ID from https://openweathermap.org/ ----------
 settings.weatherID = 3463237 -- Set this to your own weather ID
 
