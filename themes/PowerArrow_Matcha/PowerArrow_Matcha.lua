@@ -125,11 +125,7 @@ theme.cal = lain.widget.cal({
     }
 })
 
--- ALSA volume
-theme.volume = lain.widget.alsabar({
-    --togglechannel = "IEC958,3",
-    notification_preset = { font = theme.font, fg = theme.fg_normal },
-})
+-- Volume placeholder (real widget defined below via wpctl)
 
 -- MPD
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
@@ -213,23 +209,38 @@ local bat = lain.widget.bat({
     end
 })
 
--- ALSA volume
+-- Volume (PipeWire via wpctl)
 local volicon = wibox.widget.imagebox(theme.widget_vol)
-theme.volume = lain.widget.alsa({
-    settings = function()
-        if volume_now.status == "off" then
+theme.volume = { widget = wibox.widget.textbox() }
+
+local function vol_update()
+    awful.spawn.easy_async("wpctl get-volume @DEFAULT_AUDIO_SINK@", function(stdout)
+        local raw   = stdout:match("Volume: ([%d%.]+)") or "0"
+        local muted = stdout:find("%[MUTED%]") ~= nil
+        local pct   = math.floor(tonumber(raw) * 100)
+
+        if muted or pct == 0 then
             volicon:set_image(theme.widget_vol_mute)
-        elseif tonumber(volume_now.level) == 0 then
+        elseif pct <= 33 then
             volicon:set_image(theme.widget_vol_no)
-        elseif tonumber(volume_now.level) <= 50 then
+        elseif pct <= 66 then
             volicon:set_image(theme.widget_vol_low)
         else
             volicon:set_image(theme.widget_vol)
         end
 
-        widget:set_markup(markup.font(theme.font, " " .. volume_now.level .. "% "))
-    end
-})
+        theme.volume.widget:set_markup(markup.font(theme.font, " " .. pct .. "% "))
+    end)
+end
+
+vol_update()
+gears.timer { timeout = 5, autostart = true, call_now = false, callback = vol_update }
+
+theme.volume.widget:buttons(my_table.join(
+    awful.button({}, 4, function() awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+", false) vol_update() end),
+    awful.button({}, 5, function() awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-", false) vol_update() end),
+    awful.button({}, 3, function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", false) vol_update() end)
+))
 
 -- Net
 local neticon = wibox.widget.imagebox(theme.widget_net)

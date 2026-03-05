@@ -2,12 +2,13 @@ local settings = {}
 
 ---------- Theme ----------
 settings.themes = {
-    "PowerArrow_Matcha", -- 1
-    "PowerArrow_CalmRed", -- 2
-    "PowerArrow_Catppuccin" -- 3
+    "PowerArrow_Matcha",     -- 1
+    "PowerArrow_CalmRed",    -- 2
+    "PowerArrow_Catppuccin", -- 3
+    "Catppuccin",            -- 4
 }
 
-settings.chosen_theme = settings.themes[3] -- replace number inside of [] with a theme number from the list above
+settings.chosen_theme = settings.themes[4] -- replace number inside of [] with a theme number from the list above
 
 settings.enableTitlebar = false -- Set to true if you wish to have title bars on top of applications (i.e to have buttons: close, minimise, etc )
 
